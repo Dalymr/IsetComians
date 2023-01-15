@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Redirection to help Website when clicking " Can't Sign in ? "
         new Handler().postDelayed(() -> {
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.loginactivity);
             TextView myTextView = (TextView) findViewById(R.id.needHelpRedirect);
             myTextView.setMovementMethod(LinkMovementMethod.getInstance());
             myTextView.setText(Html.fromHtml("<a href='https://www.isetcom.tn' style='text-decoration:none;'>Can't Sign in ?</a>"));
