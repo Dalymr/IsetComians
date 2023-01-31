@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Iset\'Comians</string>
+    <string name="student_id">ID Etudient</string>
+    <string name="password">Mot de Passe</string>
+    <string name="connect_using_iset_comians_account">Se Connecter en Utilsant Compte Iset\'Comians</string>
+    <string name="log_in">Connexion</string>
+    <string name="loggingin">Connecting</string>
+    <string name="defaultbluewall">defaultbluewall</string>
+</resources>

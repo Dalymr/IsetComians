@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,8 +17,10 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
         // Loading time ( Splash Screen Display time )
-    private static final int SPLASH_TIME_OUT = 5000; // 2 sec
-        // Layout Display
+    private static final int SPLASH_TIME_OUT = 5000; // 5 sec
+        // Loading time ( Logging In Display time )
+        private static final int LOGGING_IN_TIME = 3000; //3 sec
+            // Layout Display
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +39,19 @@ public class MainActivity extends AppCompatActivity {
         // Redirection to help Website when clicking " Can't Sign in ? "
         new Handler().postDelayed(() -> {
             setContentView(R.layout.loginactivity);
-            TextView myTextView = (TextView) findViewById(R.id.needHelpRedirect);
+            TextView myTextView = findViewById(R.id.needHelpRedirect);
             myTextView.setMovementMethod(LinkMovementMethod.getInstance());
             myTextView.setText(Html.fromHtml("<a href='https://www.isetcom.tn' style='text-decoration:none;'>Can't Sign in ?</a>"));
         }, SPLASH_TIME_OUT);
+
     }
         // Sign in button
     //TODO: Sign in
     public void onBtnClick(View view) {
-        EditText studentId = findViewById(R.id.studentIdInput);
-        EditText pass = findViewById(R.id.passwordInput);
+        new Handler();
+        setContentView(R.layout.loadingactivity);
+
+        new Handler().postDelayed(() -> setContentView(R.layout.homeactivity),LOGGING_IN_TIME);
+        }
     }
-}
+
